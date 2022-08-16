@@ -2,9 +2,7 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   background: ${(props) => props.theme["base-profile"]};
-  max-width: 54rem;
-  margin: 0 auto;
-  margin-top: -100px;
+
 
   display: flex;
   padding: 2rem;
