@@ -3,13 +3,19 @@ import styled from "styled-components";
 export const Container = styled.div`
   background: ${(props) => props.theme["base-profile"]};
 
-
   display: flex;
   padding: 2rem;
 `;
 
+export const AvatarImg = styled.img`
+  width: 9.25rem;
+  height: 9.25rem;
+  border-radius: 8px;
+`;
+
 export const SubContainer = styled.div`
   margin-left: 1rem;
+  width: 100%;
 `;
 
 export const NameDiv = styled.div`
