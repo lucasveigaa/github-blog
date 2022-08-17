@@ -4,11 +4,9 @@ import {
   faUserGroup,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useEffect, useState } from "react";
+import { useContext } from "react";
 import { FaGithub } from "react-icons/fa";
-import { api } from "../../api/axios";
-
-import avatarProfile from "../../assets/avatar.svg";
+import { UserContext } from "../../context/UserContext";
 
 import {
   AvatarImg,
@@ -19,29 +17,8 @@ import {
   SubContainer,
 } from "./styles";
 
-interface UserInfos {
-  avatar_url: string;
-  bio: string;
-  company: null | string;
-  name: string;
-  followers: number;
-  login: string;
-  html_url: string;
-}
-
 export function ProfileContent() {
-  const [userInfo, setUserInfo] = useState<UserInfos>();
-
-  async function getDataUser() {
-    const response = await api.get("/users/lucasveigaa");
-    const { avatar_url, bio, company, name, followers, login, html_url } = response.data;
-    setUserInfo({ avatar_url, bio, company, name, followers, login, html_url });
-  }
-
-
-  useEffect(() => {
-    getDataUser();
-  }, []);
+  const { userInfo } = useContext(UserContext);
 
   return (
     <Container>
