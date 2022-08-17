@@ -11,11 +11,6 @@ export function Home() {
       
       <SubContainer>
         <CardSummaryPost />
-        <CardSummaryPost />
-        <CardSummaryPost />
-        <CardSummaryPost />
-        <CardSummaryPost />
-        <CardSummaryPost />
       </SubContainer>
     </Container>
   );

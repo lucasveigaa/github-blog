@@ -5,11 +5,15 @@ import {
   faComment,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useContext } from "react";
 import { FaGithub } from "react-icons/fa";
+import { UserContext } from "../../context/UserContext";
 
 import { Container, Nav, Navbar, TitleDescription } from "./styles";
 
 export function PostHeaderInfos() {
+  const { userInfo } = useContext(UserContext);
+
   return (
     <Container>
       <Nav>
@@ -26,7 +30,7 @@ export function PostHeaderInfos() {
       <Navbar>
         <div>
           <FaGithub />
-          <span>cameronwll</span>
+          <span>{userInfo.login}</span>
         </div>
         <div>
           <FontAwesomeIcon icon={faCalendarDay} />
