@@ -12,6 +12,7 @@ interface IssueTypes {
   title: string
   comments: string
   updated_at: string
+  url: string
 }
 
 export function Post() {
@@ -19,7 +20,8 @@ export function Post() {
   const [postDate, setPostDate] = useState('')
   const { post } = useParams()
 
-  const { body, title, comments } = issue
+  const { body, title, comments, url } = issue
+  console.log(issue)
 
   useEffect(() => {
     async function getIssue() {
@@ -36,7 +38,12 @@ export function Post() {
 
   return (
     <Container>
-      <PostHeaderInfos title={title} comments={comments} postDate={postDate} />
+      <PostHeaderInfos
+        url={url}
+        title={title}
+        comments={comments}
+        postDate={postDate}
+      />
       <PostContent body={body} />
     </Container>
   )

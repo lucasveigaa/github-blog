@@ -16,9 +16,10 @@ interface PropsType {
   title: string
   comments: string
   postDate: string
+  url: string
 }
 
-export function PostHeaderInfos({ title, comments, postDate }: PropsType) {
+export function PostHeaderInfos({ title, comments, postDate, url }: PropsType) {
   const { userInfo } = useContext(UserContext)
 
   return (
@@ -27,7 +28,7 @@ export function PostHeaderInfos({ title, comments, postDate }: PropsType) {
         <a href="/">
           <FontAwesomeIcon icon={faChevronLeft} /> VOLTAR
         </a>
-        <a href="#">
+        <a target="_blank" href={url} rel="noreferrer">
           VER NO GITHUB <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
         </a>
       </Nav>
