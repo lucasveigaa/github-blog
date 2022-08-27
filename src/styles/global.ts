@@ -1,4 +1,4 @@
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle } from 'styled-components'
 
 export const GLobalStyle = createGlobalStyle`
    * {
@@ -10,11 +10,11 @@ export const GLobalStyle = createGlobalStyle`
         outline: 0;
     }
     body {
-        background-color: ${(props) => props.theme["base-background"]};
-        color: ${(props) => props.theme["base-text"]};
+        background-color: ${(props) => props.theme['base-background']};
+        color: ${(props) => props.theme['base-text']};
         -webkit-font-smoothing: antialiased;
     }
     body, input, textarea, button {
         font: 400 1rem Nunito, sans-serif;
     }
-`;
+`

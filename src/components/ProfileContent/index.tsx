@@ -2,11 +2,11 @@ import {
   faArrowUpRightFromSquare,
   faBuilding,
   faUserGroup,
-} from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useContext } from "react";
-import { FaGithub } from "react-icons/fa";
-import { UserContext } from "../../context/UserContext";
+} from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { useContext } from 'react'
+import { FaGithub } from 'react-icons/fa'
+import { UserContext } from '../../context/UserContext'
 
 import {
   AvatarImg,
@@ -15,10 +15,10 @@ import {
   NameDiv,
   Navbar,
   SubContainer,
-} from "./styles";
+} from './styles'
 
 export function ProfileContent() {
-  const { userInfo } = useContext(UserContext);
+  const { userInfo } = useContext(UserContext)
 
   return (
     <Container>
@@ -49,5 +49,5 @@ export function ProfileContent() {
         </Navbar>
       </SubContainer>
     </Container>
-  );
+  )
 }

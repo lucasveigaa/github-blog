@@ -3,16 +3,16 @@ import {
   faCalendarDay,
   faChevronLeft,
   faComment,
-} from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useContext } from "react";
-import { FaGithub } from "react-icons/fa";
-import { UserContext } from "../../context/UserContext";
+} from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { useContext } from 'react'
+import { FaGithub } from 'react-icons/fa'
+import { UserContext } from '../../context/UserContext'
 
-import { Container, Nav, Navbar, TitleDescription } from "./styles";
+import { Container, Nav, Navbar, TitleDescription } from './styles'
 
 export function PostHeaderInfos() {
-  const { userInfo } = useContext(UserContext);
+  const { userInfo } = useContext(UserContext)
 
   return (
     <Container>
@@ -42,5 +42,5 @@ export function PostHeaderInfos() {
         </div>
       </Navbar>
     </Container>
-  );
+  )
 }

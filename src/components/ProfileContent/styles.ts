@@ -1,22 +1,22 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 export const Container = styled.div`
-  background: ${(props) => props.theme["base-profile"]};
+  background: ${(props) => props.theme['base-profile']};
 
   display: flex;
   padding: 2rem;
-`;
+`
 
 export const AvatarImg = styled.img`
   width: 9.25rem;
   height: 9.25rem;
   border-radius: 8px;
-`;
+`
 
 export const SubContainer = styled.div`
   margin-left: 1rem;
   width: 100%;
-`;
+`
 
 export const NameDiv = styled.div`
   display: flex;
@@ -26,24 +26,24 @@ export const NameDiv = styled.div`
   strong {
     font-weight: 700;
     font-size: 1.5rem;
-    color: ${(props) => props.theme["base-title"]};
+    color: ${(props) => props.theme['base-title']};
   }
 
   a {
     text-decoration: none;
     font-weight: 700;
     font-size: 0.75rem;
-    color: ${(props) => props.theme["blue"]};
+    color: ${(props) => props.theme.blue};
 
     &:hover {
       opacity: 0.8;
     }
   }
-`;
+`
 
 export const BioDescription = styled.span`
   line-height: 1.6rem;
-`;
+`
 
 export const Navbar = styled.nav`
   display: flex;
@@ -52,13 +52,13 @@ export const Navbar = styled.nav`
   align-items: center;
 
   span {
-    color: ${(props) => props.theme["base-subtitle"]};
+    color: ${(props) => props.theme['base-subtitle']};
   }
 
   svg {
     margin-right: 0.5rem;
     width: 1.125rem;
     height: 1.125rem;
-    color: ${(props) => props.theme["base-label"]};
+    color: ${(props) => props.theme['base-label']};
   }
-`;
+`

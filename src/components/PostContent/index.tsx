@@ -1,4 +1,4 @@
-import { Container } from "./styles";
+import { Container } from './styles'
 
 export function PostContent() {
   return (
@@ -14,5 +14,5 @@ export function PostContent() {
         and any variable can be assigned (and re-assigned) values of all types:
       </div>
     </Container>
-  );
+  )
 }

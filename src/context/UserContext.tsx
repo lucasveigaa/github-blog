@@ -1,40 +1,41 @@
-import { createContext, ReactNode, useEffect, useState } from "react";
-import { api } from "../api/axios";
+/* eslint-disable camelcase */
+import { createContext, ReactNode, useEffect, useState } from 'react'
+import { api } from '../api/axios'
 
 interface UserInfoType {
-  avatar_url?: string;
-  bio?: string;
-  company?: null | string;
-  name?: string;
-  followers?: number;
-  login?: string;
-  html_url?: string;
+  avatar_url?: string
+  bio?: string
+  company?: null | string
+  name?: string
+  followers?: number
+  login?: string
+  html_url?: string
 }
 
 interface UserProviderProps {
-  children: ReactNode;
+  children: ReactNode
 }
 
 interface UserContextType {
-  userInfo: UserInfoType;
+  userInfo: UserInfoType
 }
 
-export const UserContext = createContext({} as UserContextType);
+export const UserContext = createContext({} as UserContextType)
 
 export function UserProvider({ children }: UserProviderProps) {
-  const [userInfo, setUserInfo] = useState<UserInfoType>({});
+  const [userInfo, setUserInfo] = useState<UserInfoType>({})
 
   async function getDataUser() {
-    const response = await api.get("/users/lucasveigaa");
+    const response = await api.get('/users/lucasveigaa')
     const { avatar_url, bio, company, name, followers, login, html_url } =
-      response.data;
-    setUserInfo({ avatar_url, bio, company, name, followers, login, html_url });
+      response.data
+    setUserInfo({ avatar_url, bio, company, name, followers, login, html_url })
   }
 
   useEffect(() => {
-    getDataUser();
-  }, []);
+    getDataUser()
+  }, [])
   return (
     <UserContext.Provider value={{ userInfo }}>{children}</UserContext.Provider>
-  );
+  )
 }

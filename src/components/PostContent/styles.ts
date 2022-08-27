@@ -1,6 +1,5 @@
-import styled from "styled-components";
-
+import styled from 'styled-components'
 
 export const Container = styled.main`
-padding: 2rem;
+  padding: 2rem;
 `
