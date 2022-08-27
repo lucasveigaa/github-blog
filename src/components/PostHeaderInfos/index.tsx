@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 import {
   faArrowUpRightFromSquare,
   faCalendarDay,
@@ -11,7 +12,13 @@ import { UserContext } from '../../context/UserContext'
 
 import { Container, Nav, Navbar, TitleDescription } from './styles'
 
-export function PostHeaderInfos() {
+interface PropsType {
+  title: string
+  comments: string
+  postDate: string
+}
+
+export function PostHeaderInfos({ title, comments, postDate }: PropsType) {
   const { userInfo } = useContext(UserContext)
 
   return (
@@ -24,9 +31,7 @@ export function PostHeaderInfos() {
           VER NO GITHUB <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
         </a>
       </Nav>
-      <TitleDescription>
-        JavaScript data types and data structures
-      </TitleDescription>
+      <TitleDescription>{title}</TitleDescription>
       <Navbar>
         <div>
           <FaGithub />
@@ -34,11 +39,11 @@ export function PostHeaderInfos() {
         </div>
         <div>
           <FontAwesomeIcon icon={faCalendarDay} />
-          <span>Há 1 dia</span>
+          <span>{postDate}</span>
         </div>
         <div>
           <FontAwesomeIcon icon={faComment} />
-          <span>5 comentários</span>
+          <span>{comments} comentários</span>
         </div>
       </Navbar>
     </Container>
