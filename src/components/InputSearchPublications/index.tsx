@@ -1,13 +1,23 @@
 import { Container } from './style'
 
-export function InputSearchPublications() {
+interface InputSearchProps {
+  handleInputSearch: (query: string) => void
+}
+
+export function InputSearchPublications({
+  handleInputSearch,
+}: InputSearchProps) {
   return (
     <Container>
       <div>
         <span>Publicações</span>
         <small>6 publicações</small>
       </div>
-      <input type="text" placeholder="Buscar conteúdo" />
+      <input
+        onChange={(e) => handleInputSearch(e.target.value)}
+        type="text"
+        placeholder="Buscar conteúdo"
+      />
     </Container>
   )
 }

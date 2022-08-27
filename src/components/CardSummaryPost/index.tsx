@@ -12,18 +12,30 @@ interface IssuesTypes {
   number: number
 }
 
-export function CardSummaryPost() {
+interface CardSummaryPostProps {
+  inputSearch: string
+}
+
+export function CardSummaryPost({ inputSearch }: CardSummaryPostProps) {
   const [issues, setIssues] = useState<IssuesTypes[]>([])
 
   useEffect(() => {
     async function getIssue() {
+      if (inputSearch !== '') {
+        const response = await api.get(
+          `/search/issues?q=${inputSearch}%20user:lucasveigaa`,
+        )
+        setIssues(response.data.items)
+        return
+      }
       const response = await api.get('/repos/lucasveigaa/github-blog/issues')
 
       setIssues(response.data)
     }
 
     getIssue()
-  }, [])
+  }, [inputSearch])
+  console.log(issues)
 
   return (
     <>
